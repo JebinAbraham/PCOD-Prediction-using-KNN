@@ -6,7 +6,7 @@
 import requests, json 
   
 # enter your api key here 
-api_key = 'AIzaSyDIwZx8f9OTaY_KN0zlh5YksgokNXPic9M'
+api_key = 'AIzaSyCK-ZHzKK0ZEyYmvpEkzRN-KV5uZDYcg90'
   
 # url variable store url 
 url = "https://maps.googleapis.com/maps/api/place/textsearch/json?"
@@ -35,4 +35,3 @@ for i in range(len(y)):
     # Print value corresponding to the 
     # 'name' key at the ith index of y 
     print(y[i]['name']) 
-    print(y[i]['address'])
