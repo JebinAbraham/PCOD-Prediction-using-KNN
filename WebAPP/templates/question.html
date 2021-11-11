@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+.login-box {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box a:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.questionare {
+  position: center;  
+}
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+.space{
+	margin-left:50px;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+</style>
+
+     <title>PCOde'd</title>
+<!--
+
+http://www.tooplate.com/view/2098-health
+
+-->
+     
+     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+     <link rel="stylesheet" href="../static/css/animate.css">
+     <link rel="stylesheet" href="../static/css/owl.carousel.css">
+     <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+
+     <!-- MAIN CSS -->
+	<link rel="stylesheet" href="../static/css/tooplate-style.css">
+     
+	   <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython_stdlib.js" integrity="sha256-Gnrw9tIjrsXcZSCh/wos5Jrpn0bNVNFJuNJI9d71TDs=" crossorigin="anonymous"></script>
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-5">
+                         <p>Welcome to <font face = "San Francisco" >PCOd'ed</font><br /></i></a></p>
+                    </div>
+                         
+                    <div class="col-md-8 col-sm-7 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i> +91 8921619772 / +91 9207110456</span>
+
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">info@pcoded.com</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="home.html" class="navbar-brand"> <font face = "San Francisco" size =" 5">PCOd'ed</font><br /> </i></a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="question.html" class="smoothScroll">Questionnaire & Prediction</a></li>
+                         <li><a href="doctorplace.html" class="smoothScroll">Doctor Recommendation</a></li>
+                         <li><a href="fitnessplace.html" class="smoothScroll">Fitness Center Recommendation</a></li>
+                         <li><a href="news.php" class="smoothScroll">Updates on PCOS</a></li>
+						 <li><a href="signout.php" class="smoothScroll">Sign out</a></li>
+			
+                         
+                      </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+  <div class = "questionare">
+  <form action="insert.php">
+  <p><br>Pick your age limit:</p>
+  <div>
+    <input type="radio" name="age" value="2">
+    <label >Less than 18</label>
+
+    <input type="radio" 
+     name="age" value="0">
+    <label >19-34</label>
+
+    <input type="radio" 
+     name="age" value="1">
+    <label>35-50</label>
+	
+	<input type="radio" 
+     name="age" value="3">
+    <label>51 and above</label>
+  </div>
+  
+  <p><font>Which work profile matches yours?:</font></p>
+	  <input type="radio" value="1" name="work" >
+	  <label >Student</label>
+	  <input type="radio" value="0" name="work" >
+	  <label >Employed</label> 
+	  <input type="radio" value="2" name="work" >
+	  <label >Unemployed</label><br>
+  <div>
+ 
+ <p><font >What is your marital status:</font></p>
+	  <input type="radio" value="0" name="marital" >
+	  <label >SIngle</label>
+	  <input type="radio" value="1" name="marital" >
+	  <label >Married</label><br>
+
+<p><font>How many kids do you have?:</font></p>
+	  <input type="radio" value="0" name="kids" >
+	  <label >0</label>
+	  <input type="radio" value="3" name="kids" >
+	  <label >1</label> 
+	  <input type="radio" value="1" name="kids" >
+	  <label >2</label>
+	  <input type="radio" value="2" name="kids" >
+	  <label >More than 2</label><br>
+
+<p><font>How would you describe your Body Physic ?:</font></p>
+	  <input type="radio" value="2" name="physic" >
+	  <label >I am underweight</label>
+	  <input type="radio" value="1" name="physic" >
+	  <label >I am at a healthy weight</label>
+	  <input type="radio" value="0" name="physic" >
+	  <label >I  am a bit overweight</label>
+	  <input type="radio" value="3" name="physic" >
+	  <label >I am obese</label><br>	
+
+<p><font>Have you done an ultrasound abdomen scanning and what does your report say?:</font></p>
+	  <input type="radio" value="2" name="scanning" >
+	  <label >Normal results</label>
+	  <input type="radio" value="0" name="scanning" >
+	  <label >Cysts in overy</label>
+	  <input type="radio" value="3" name="scanning" >
+	  <label >I don't remember</label>
+	  <input type="radio" value="1" name="scanning" >
+	  <label >No scanning was done</label><br>
+
+<p>Do you notice any of these right before your period begins?</p>
+	  <input type="radio" value="1" name="period" >
+	  <label >Bloating</label>
+	  <input type="radio" value="2" name="period" >
+	  <label >Breast pain</label>
+	  <input type="radio" value="4" name="period" >
+	  <label >Constipation</label>
+	  <input type="radio" value="5" name="period" >
+	  <label >Diarrhoea</label>
+	  <input type="radio" value="6" name="period" >
+	  <label >Headache</label>
+	  <input type="radio" value="7" name="period" >
+	  <label >Sleeplessness</label>
+	  <input type="radio" value="0" name="period" >
+	  <label >Mood swings</label>
+	  <input type="radio" value="3" name="period" >
+	  <label >None</label><br>	
+
+	  <p>Are you experiencing irregular or late periods?</p>
+	  <input type="radio" value="0" name="irregular" >
+	  <label >Yes</label>
+	  <input type="radio" value="1" name="irregular" >
+	  <label >No</label><br> 
+
+		<p>Are you experiencing painful periods?:</p>
+	  <input type="radio" value="1" name="painful" >
+	  <label >Yes</label>
+	  <input type="radio" value="0" name="painful" >
+	  <label >No</label><br>
+	  
+	  <p>Are you experiencing Excessive bleeding?:</p>
+	  <input type="radio" value="1" name="excessive" >
+	  <label >Yes</label>
+	  <input type="radio" value="0" name="excessive" >
+	  <label >No</label><br>
+	  
+	  <p>How often do you get your periods?</p>
+	  <input type="radio" value="1" name="often" >
+	  <label >Less than 21 days</label>
+	  <input type="radio" value="2" name="often" >
+	  <label >21-40 days</label>
+	  <input type="radio" value="0" name="often" >
+	  <label >More than 40 days</label><br>
+	  
+	  <p>How long does your period last?</p>
+	  <input type="radio" value="1" name="last" >
+	  <label >Less than 3 days</label>
+	  <input type="radio" value="2" name="last" >
+	  <label >3-5 days</label>
+	  <input type="radio" value="0" name="last" >
+	  <label >5-7</label>
+	  <input type="radio" value="3" name="last" >
+	  <label >More than 7 days</label><br>
+	  
+	  <p>How would you like to rate your period pains</p>
+	  <input type="radio" value="3" name="rate" >
+	  <label >No period pain</label>
+	  <input type="radio" value="1" name="rate" >
+	  <label >Mild</label>
+	  <input type="radio" value="0" name="rate" >
+	  <label >Moderate</label>
+	  <input type="radio" value="2" name="rate" >
+	  <label >Severe</label><br>
+	  
+	  <p>Do you notice any clots during your periods?</p>
+	  <input type="radio" value="1" name="clots" >
+	  <label >No clots</label>
+	  <input type="radio" value="0" name="clots" >
+	  <label >Yes, Small clots</label>
+	  <input type="radio" value="2" name="clots" >
+	  <label >Yes, Large clots</label><br>
+	  
+	  <p>Do you have the habbit of consuming alchohol?</font></p>
+    <input type="radio" value="1" name="alcohol" >
+    <label >Yes</label>
+    <input type="radio" value="0" name="alcohol" >
+    <label >No</label><br>
+	
+	<p>Do you have the habbit of smoking?</font></p>
+    <input type="radio" value="1" name="smoking" >
+    <label >Yes</label>
+    <input type="radio" value="0" name="smoking" >
+    <label >No</label><br>
+	
+	<p>Are you under any stress?</font></p>
+      <input type="radio" value="1" name="stress" >
+      <label >Yes</label>
+      <input type="radio" value="0" name="stress" >
+      <label >No</label><br>
+	  
+	  <p>Do you exercise regularly ?</font></p>
+      <input type="radio" value="1" name="excercise" >
+      <label >Yes</label>
+      <input type="radio" value="0" name="excercise" >
+      <label >No</label><br>
+	  
+	  <p>Is your mother diagonosed with PCOD/PCOS</font></p>
+      <input type="radio" value="1" name="mother" >
+      <label >Yes</label>
+      <input type="radio" value="0" name="mother" >
+      <label >No</label>
+	  
+	  <p>Do you Suffer from diabetes?</font></p>
+	  <input type="radio" value="1" name="diabetes" >
+	  <label >Yes</label>
+	  <input type="radio" value="0" name="diabetes" >
+	  <label >No</label><br>
+	  
+	  <p>Do you Suffer from Hyperthyrodism?</font></p>
+	  <input type="radio" value="0" name="hyperthyroidism" >
+	  <label >Yes</label>
+	  <input type="radio" value="1" name="hyperthyroidism" >
+	  <label >No</label><br> 
+	  
+	  <p>Do you experience excessive growth of facial and body hair?</font></p>
+	  <input type="radio" value="1" name="hair">
+	  <label >Yes</label>
+	  <input type="radio" value="0" name="hair">
+	  <label >No</label><br> 
+	  
+	  <p>Do you have Acne/ Hyper-pigmentation?</p>
+	  <input type="radio" value="0" name="acne">
+	  <label >Yes</label>
+	  <input type="radio" value="1" name="acne">
+	  <label >No</label><br> 
+	  
+	  <input type="submit" value="Submit">
+  </div > 
+<!-- SCRIPTS -->
+     <script src="../static/js/jquery.js" ></script>
+     <script src="../static/js/bootstrap.min.js"></script>
+     <script src="../static/js/jquery.sticky.js"></script>
+     <script src="../static/js/jquery.stellar.min.js"></script>
+     <script src="../static/js/wow.min.js"></script>
+     <script src="../static/js/smoothscroll.js"></script>
+     <script src="../static/js/owl.carousel.min.js"></script>
+     <script src="../static/js/custom.js"></script>
+
+</body>
+</html>
