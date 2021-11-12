@@ -78,7 +78,7 @@ http://www.tooplate.com/view/2098-health
                          <li><a href="#top" class="smoothScroll">Home</a></li>
                          <li><a href="#about" class="smoothScroll">About Us</a></li>
                          <li><a href="#team" class="smoothScroll">Best Doctors</a></li>
-                         <li><a href="#news" class="smoothScroll">Latest News</a></li>
+                         <li><a href="home_news.php" class="smoothScroll">Latest News</a></li>
 			<li><a class="smoothScroll">Best Fitness Centers</a></li>						
 			<li><a href="register.html" class="smoothScroll">Sign Up/Sign In</a></li>
                       </ul>
