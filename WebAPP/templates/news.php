@@ -2,13 +2,7 @@
 <html lang="en">
 <head>
 
-     <title>PCOde'd</title>
-<!--
-
-http://www.tooplate.com/view/2098-health
-
--->
-     
+     <title>PCOde'd</title>     
      <link rel="stylesheet" href="../static/css/bootstrap.min.css">
      <link rel="stylesheet" href="../static/css/font-awesome.min.css">
      <link rel="stylesheet" href="../static/css/animate.css">
